@@ -9,7 +9,7 @@ import { ETheme } from '../../enums/ETheme.enum';
 export class HeaderComponent implements OnInit{
 
   public icon: string = ETheme.ICON_MOON;
-
+  public textTheme: string = ETheme.TEXT_DARK;
   constructor(){}
   ngOnInit(): void {}
 
@@ -17,9 +17,10 @@ export class HeaderComponent implements OnInit{
     const theme = document.body.classList.toggle('dark-theme');
 
     if(theme){
+      this.textTheme = ETheme.TEXT_SUN;
       return this.icon = ETheme.ICON_SUN;
     }
-
+    this.textTheme = ETheme.TEXT_DARK;
     return this.icon = ETheme.ICON_MOON;
   }
 }
